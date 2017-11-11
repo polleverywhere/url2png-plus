@@ -1,8 +1,18 @@
 # Url2png::Plus
 
-The `url2png` gem is madness. It tries to be compatible with a bunch of different versions of the url2png APIs, which a client doesn't need to worry about. Its also insecure out of the box by using the `http` protocol, and makes configuring the protocol to `https` very difficult.
+Generates URL2PNG urls for Ruby projects and integrations with popular web frameworks, like Rails, Sinatra, etc.
 
-This gem only attempts to integrate with the most recent version of URL2PNG, which is v6 at the time of this writing, and otherwise stay out of the way.
+## Why `url2png-plus` and not `url2png`?
+
+The `url2png` gem is way more complicated than it needs to be:
+
+1. It tries to be compatible with a bunch of different versions of the url2png HTTP APIs. The client shouldn't worry about this, at least I can't rationalize it.
+
+2. Its insecure out of the box by using the `http` protocol. Configuring the protocol is difficult because the base URL is a "magic string" inside the gem.
+
+3. The project has roughly 1,000 LOC. This project has 40 LOC. That doesn't mean much, but it is less stuff that can break.
+
+This gem only attempts to integrate with the most recent version of URL2PNG, which is v6 at the time of this writing. If URL2PNG upgrades their APIs, this client will be updated to use the new API without any attempt to remain compatible with the old APIs. That burden will be put on using an older version of the gem.
 
 ## Installation
 
